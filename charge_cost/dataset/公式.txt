@@ -1,0 +1,12 @@
+Function group(a, b, c)
+   group= ((a * 0.99 * b + a * 0.01 * b * 3) * 0.07 + (c * b * 0.04)) * 0.7
+End Function
+
+
+Function errorrate(a, b)
+   errorrate = (a - b)/ b
+End Function
+
+Function income(a, b, c)
+   income = ((a * 0.99 * b + a * 0.01 * b * 3) * 0.09 + (c * b*0.8 * 0.04))
+End Function
