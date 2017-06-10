@@ -25,8 +25,8 @@ data = sc.textFile("/mif/data_new/worker_hospital_detail.txt")
 data = data.map(lambda line: line.split(','))
 # num 0 ,medical_name 2 ,count 4
 #####诊疗频繁模式挖掘
+print "****"
 trement_nums = data.filter(lambda line: line[0] in nums_broadcast.value)
-print trement_nums.count()
 trement_ngs=trement_nums.filter(lambda line:line[1] in trement_broadcast.value)
 trement_bkt_withNum = trement_ngs.map(lambda line: ((line[0], line[2]), 1)) \
     .reduceByKey(lambda a, b: a) \

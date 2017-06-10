@@ -3,13 +3,11 @@
 病人住院费用影响因素分析
 '''
 import numpy as np
-from sklearn.metrics import f1_score
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
 
 from sklearn import ensemble
 
 from sklearn import cross_validation
+
 
 def train(clf,x_train,y_train,x_test,y_test):
     clf.fit(x_train,y_train)
@@ -24,10 +22,10 @@ test=[]
 ###按行读取训练集文件
 for line in data:
     key=line.strip("\n").split(',')
-    keys.append(key[1:30])
-    values.append(key[30])
+    keys.append(key[1:35])
+    values.append(key[35])
 training=np.array(keys)
-training_set=training.reshape(training.shape[0],29)
+training_set=training.reshape(training.shape[0],34)
 label=np.array(values).ravel()         ##只提取类标签
 
 ####对训练集进行划分(7:3比例进行划分)
