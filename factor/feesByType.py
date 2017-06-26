@@ -52,6 +52,7 @@ data = data.map(proprecessing)\
     .reduceByKey(lambda a,b:(a[0]+b[0],a[1]+b[1],a[2]+b[2],a[3]+b[3],a[4]+b[4],a[5]+b[5],a[6]+b[6]))\
     .sortByKey()
 
+##（就医序号,(总费用，药品费、诊疗费、床位费，手术费，护理费、材料费))
 out = open('output/feesByType.csv', 'w+')
 for (key,value) in data.collect():
     out.write("%s,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n" % (key,value[0],value[1],value[2],value[3],value[4],value[5],value[6]))
